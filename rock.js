@@ -54,17 +54,15 @@ function playRound(humanSelection,computerSelection) {
     }
 }
 
-const humanSelection = "rock"
-const computerSelection = getComputerChoice();
-console.log(playRound(humanSelection, computerSelection));
-
-/**function game() {
+function game() {
+    let score = 0
     console.log("Hello and Welcome!")
     for (let i = 0; i < 5; i++) {
         const humanSelection = "rock";
         const computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection));
     }
+    console.log("Game Over");
 }
+game()
 
-game()**/
