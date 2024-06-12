@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 humanSelection();
 **/
-function HumanScore() {
+/**function HumanScore() {
     let HumanScore = 0;
     console.log(HumanScore);
 }
@@ -23,21 +23,21 @@ function ComputerScore() {
     let computerScore = 0;
     console.log(computerScore);
 }
-ComputerScore();
+ComputerScore();**/
 
-function checkWinner() {
+function checkWinner(humanSelection, computerSelection) {
     if(humanSelection == computerSelection) {
-        return "Tie"
+        return "Tie";
     }
     else if(
         (humanSelection == "rock" && computerSelection == "scissors") ||
         (humanSelection == "paper" && computerSelection == "rock") ||
         (humanSelection == "scissors" && computerSelection == "paper")
         ){
-        return "Player"
+        return "Player";
         }
     else {
-        return "Computer"
+        return "Computer";
     }
 }
 
@@ -55,14 +55,31 @@ function playRound(humanSelection,computerSelection) {
 }
 
 function game() {
-    let score = 0
+    let playerScore = 0
+    let computerScore = 0
     console.log("Hello and Welcome!")
     for (let i = 0; i < 5; i++) {
         const humanSelection = "rock";
         const computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection));
+    if(checkWinner(humanSelection, computerSelection) == "Player") {
+        playerScore++;
+        }    
+    if(checkWinner(humanSelection, computerSelection) == "Computer") {
+        computerScore++;
+        }
     }
-    console.log("Game Over");
+        console.log("Game Over");
+    if(playerScore > computerScore) {
+        console.log("Player Wins!");
+        }
+    else if(playerScore < computerScore) {
+        console.log("Computer Wins!");
+        }
+    else {
+        console.log("Wow It's a Tie!");
+    }
+    
 }
 game()
 
