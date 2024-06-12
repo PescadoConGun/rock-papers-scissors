@@ -7,12 +7,12 @@ function getComputerChoice() {
     return choice
 }
 
-/** function humanSelection() {
-    let humanChoice = window.prompt("rock, paper or scissors?"); 
-    console.log(humanChoice);
+function getHumanSelection() {
+    let humanChoice = window.prompt("rock, paper or scissors?").toLowerCase(); 
+    return humanChoice;
 }
-humanSelection();
-**/
+
+
 /**function HumanScore() {
     let HumanScore = 0;
     console.log(HumanScore);
@@ -43,6 +43,7 @@ function checkWinner(humanSelection, computerSelection) {
 
 function playRound(humanSelection,computerSelection) {
     const result = checkWinner (humanSelection, computerSelection);
+    console.log("---------------------------------");
     if(result == "Tie"){
         return "It's a Tie"
     }
@@ -59,7 +60,7 @@ function game() {
     let computerScore = 0
     console.log("Hello and Welcome!")
     for (let i = 0; i < 5; i++) {
-        const humanSelection = "rock";
+        const humanSelection = getHumanSelection();
         const computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection));
     if(checkWinner(humanSelection, computerSelection) == "Player") {
