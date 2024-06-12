@@ -4,16 +4,15 @@ const options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     const choice = options[Math.floor(Math.random() * options.length)];
-    console.log(choice);
+    return choice
 }
-getComputerChoice();
 
-function getHumanChoice() {
-    let humanChoice = window.prompt("Rock, paper or scissors?"); 
+/** function humanSelection() {
+    let humanChoice = window.prompt("rock, paper or scissors?"); 
     console.log(humanChoice);
 }
-getHumanChoice();
-
+humanSelection();
+**/
 function HumanScore() {
     let HumanScore = 0;
     console.log(HumanScore);
@@ -27,13 +26,13 @@ function ComputerScore() {
 ComputerScore();
 
 function checkWinner() {
-    if (getHumanChoice == getComputerChoice) {
+    if(humanSelection == computerSelection) {
         return "Tie"
     }
     else if(
-        (getHumanChoice == "rock" && getComputerChoice == "scissors") ||
-        (getHumanChoice == "paper" && getComputerChoice == "rock") ||
-        (getHumanChoice == "scissors" && getComputerChoice == "paper")
+        (humanSelection == "rock" && computerSelection == "scissors") ||
+        (humanSelection == "paper" && computerSelection == "rock") ||
+        (humanSelection == "scissors" && computerSelection == "paper")
         ){
         return "Player"
         }
@@ -42,11 +41,30 @@ function checkWinner() {
     }
 }
 
-function playRound(humanChoice, computerChoice) {
-
+function playRound(humanSelection,computerSelection) {
+    const result = checkWinner (humanSelection, computerSelection);
+    if(result == "Tie"){
+        return "It's a Tie"
+    }
+    else if(result == "Player"){
+        return `You Win! ${humanSelection} beats ${computerSelection}`
+    }
+    else{
+        return `You Lose! ${computerSelection} beats ${humanSelection}`
+    }
 }
 
-const humanSelection = getHumanChoice();
+const humanSelection = "rock"
 const computerSelection = getComputerChoice();
+console.log(playRound(humanSelection, computerSelection));
 
-playRound(humanSelection, computerSelection);
+/**function game() {
+    console.log("Hello and Welcome!")
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = "rock";
+        const computerSelection = getComputerChoice();
+        console.log(playRound(humanSelection, computerSelection));
+    }
+}
+
+game()**/
