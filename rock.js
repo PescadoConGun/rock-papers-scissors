@@ -1,4 +1,3 @@
-console.log("¡Hola!")
 
 const options = ["rock", "paper", "scissors"];
 
@@ -11,19 +10,6 @@ function getHumanSelection() {
     let humanChoice = window.prompt("rock, paper or scissors?").toLowerCase(); 
     return humanChoice;
 }
-
-
-/**function HumanScore() {
-    let HumanScore = 0;
-    console.log(HumanScore);
-}
-HumanScore();
-
-function ComputerScore() {
-    let computerScore = 0;
-    console.log(computerScore);
-}
-ComputerScore();**/
 
 function checkWinner(humanSelection, computerSelection) {
     if(humanSelection == computerSelection) {
@@ -78,7 +64,7 @@ function game() {
         console.log("Computer Wins!");
         }
     else {
-        console.log("Wow It's a Tie!");
+        console.log("Wow! It's a Tie!");
     }
     
 }
